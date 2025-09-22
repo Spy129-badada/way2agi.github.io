@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>AI·生存·宇宙 随机命题器</title>
+  <style>
+    body {
+      background: #0d0d0d;
+      color: #f5f5f5;
+      font-family: "Microsoft YaHei", sans-serif;
+      text-align: center;
+      padding: 100px;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 30px;
+      color: #00ffe7;
+    }
+    #result {
+      margin: 40px 0;
+      font-size: 22px;
+      font-weight: bold;
+      color: #ffd700;
+    }
+    button {
+      padding: 16px 40px;
+      font-size: 20px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #00ffe7, #0077ff);
+      color: #fff;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #0077ff, #00ffe7);
+    }
+  </style>
+</head>
+<body>
+  <h1>AI · 生存 · 宇宙 随机命题器</h1>
+  <button onclick="generate()">抽取命题</button>
+  <div id="result">点击按钮，生成你的命题编号</div>
+
+  <script>
+    const AI = [
+      "AI","神经网络","虚拟偶像","AI幻觉","AI觉醒","Prompt","AI写作","知识库",
+      "超级智能体","AI视频","AI换脸","声音克隆","AI编程","大模型","脑机接口","硅基生命",
+      "自动驾驶","数字灵魂","LORA","AI宠物","AI图片","AI硬件","邪恶AI","AI音乐",
+      "智能助手","AGI"
+    ];
+    const Survival = [
+      "生存","永生","职场","进化","死亡","友谊","伴侣","亲子","友谊","合伙人"
+    ];
+    const Cosmos = [
+      "宇宙","虫洞","银河","空间站","火星","生存仓","黑洞","多元维度","暗物质","机器人",
+      "地球","虚拟世界","平行宇宙","公园","咖啡馆","屋顶","太阳","手机","楼梯","木星",
+      "大爆炸","家","航线","机器人","未知领域","月球"
+    ];
+
+    function generate(){
+      let a = Math.floor(Math.random()*AI.length);
+      let b = Math.floor(Math.random()*Survival.length);
+      let c = Math.floor(Math.random()*Cosmos.length);
+      let code = String.fromCharCode(65+a) + b + String.fromCharCode(65+c);
+      let result = `${code} = 《${AI[a]} · ${Survival[b]} · ${Cosmos[c]}》`;
+      document.getElementById("result").innerText = result;
+    }
+  </script>
+</body>
+</html>
